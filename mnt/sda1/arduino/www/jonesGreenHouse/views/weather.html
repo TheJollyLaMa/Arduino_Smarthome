@@ -1,0 +1,19 @@
+<div ng-init = "fetchWeatherData()">
+  <p>3 hour Forecast is: {{forecast_main}} with {{forecast_description}}.</p>
+  <p>High: {{forecast_temp_max}}
+     Low: {{forecast_temp_min}}
+     Feels Like: {{forecast_feels_like}}
+     Temp: {{forecast_temp}}
+     Humidity: {{forecast_humidity}}
+     Pressure: {{forecast_pressure}}
+  </p>
+  <p>today: {{today}}</p>
+  <p>tomorrow: {{tomorrow}}</p>
+  <table>
+    <tr ng-repeat="x in weatherArray track by $index">
+      <td>{{x.dt_txt}}</td>
+      <td>{{x.main}}</td>
+      <td>{{x.weather}}</td>
+    </tr>
+  </table>
+</div>

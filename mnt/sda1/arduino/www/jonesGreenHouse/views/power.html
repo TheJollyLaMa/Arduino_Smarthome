@@ -1,0 +1,21 @@
+
+<div class="container" ng-init="parseData();">
+  <div class="container">
+    <div class="datadisplay">
+      <p>Last Update: {{greenhouse_variables.last_update}}</p>
+      <p>Day of Calendar Year: {{greenhouse_variables.total_days}} </p>
+      <p>Days Since Calendar Solstice: {{ greenhouse_variables.total_days*1 + 10 | number:0 }} </p>
+      <p>Battery Voltage Sensor: {{greenhouse_variables.battery_sense_voltage}} Volts</p>
+      <p>Solar Panel Array Voltage: {{greenhouse_variables.array_voltage}} Volts</p>
+      <p>Battery Terminal Temperature: {{greenhouse_variables.battery_temp_F}} Fahrenheit</p>
+      
+      <p>Tristar Data</p>
+      </div>
+      <p>Power Usage Data</p>
+      <p>Line 1: {{line1}}</p><p>Line 2: {{line2}}</p><p>Line 3: {{line3}}</p><p>Line 4: {{line4}}</p>
+
+      <canvas id="line-chart" width="800" height="450"></canvas>
+
+    </div>
+  </div>
+</div>
