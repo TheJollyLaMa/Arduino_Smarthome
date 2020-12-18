@@ -17,7 +17,7 @@ longitude = location[1]
 https://openweathermap.org/current for properties to response from weather_url
 """
 
-weather_url = 'http://api.openweathermap.org/data/2.5/forecast?lat={}&lon={}&appid=1c440441538b6c2c49710ebe4f4b820c&units=metric'.format(latitude, longitude)
+weather_url = 'http://api.openweathermap.org/data/2.5/forecast?lat={}&lon={}&appid=&units=metric'.format(latitude, longitude)
 
 r = urllib2.urlopen(weather_url).read()
 weather_data = json.loads(r)
