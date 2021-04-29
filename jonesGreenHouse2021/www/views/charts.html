@@ -1,0 +1,73 @@
+<div style="height:100%;width:100%;" ng-init="parseData();">
+  <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="arrLabels"
+    chart-series="series" chart-options="options"
+    chart-dataset-override="datasetOverride" chart-click="onClick">
+  </canvas>
+</div><!--
+<form name="changeChartForm" ng-submit="changeChart()" data-ng-model="changeChartForm" class="form-inline">
+
+            <div class="form-group">
+              <p>
+                <label for="timeWindow">Time Window: </label>
+                <p class="input-group">
+                    <select name="timeWindow" type="text" class="form-control centered" data-ng-options="each.timeWindow for each in timeWindowList" ng-init="origin = green_inventory[0].origin;" data-ng-model="origin" data-ng-change="fillWeight()" ng-required></select>
+                    {{timeWindow.timeWindow}}
+                </p>
+              </p>
+            </div>
+            <div class="form-group">
+              <p>
+                <label for="weight">Weight:</label>
+                <p class="input-group">
+                  <select ng-name="weight" type="number" class="form-control centered" data-ng-options="weight for weight in Range(1, inventory_weight)" data-ng-model="weight" placeholder="lbs" ng-required></select>
+                </p>
+              </p>
+            </div>
+            <div class="form-group">
+              <p>
+                <label for="roast_type">Roast Type:</label>
+                <p class="input-group">
+                  <select name="roast_type" type="text" class="form-control centered" data-ng-options="type for type in roast_type_cats" data-ng-model="roast_type" placeholder="roast type" ng-required></select>
+                </p>
+              </p>
+            </div>
+            <div class="form-actions">
+              <input type="submit" class="backend_category_buttons btn btn-default">
+            </div>
+        </form>-->
+<div>
+  <table>
+    <thead><tr>
+      <th>output_power</th><th>battery_terminal_voltage</th><th>charging_current</th><th>fault</th><th>alarm</th><th>sweep_Pmax</th><th>battery_temp_C</th>
+      <th>total_kwh_resetable</th><th>battery_temp_F</th><th>total_kwh</th><th>array_current</th><th>heat_sink_temp_F</th><th>battery_sense_voltage</th><th>charging_state</th>
+      <th>sweep_Voc</th><th>array_voltage</th><th>heat_sink_temp_C</th><th>input_power</th><th>battery_current</th><th>target_voltage</th><th>sweep_Vmp</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="x in dailyGenData">
+        <td>{{x.index}}</td>
+        <td>{{ x.output_power }}</td>
+        <td>{{ x.battery_terminal_voltage }}</td>
+        <td>{{ x.charging_current }}</td>
+        <td>{{ x.fault }}</td>
+        <td>{{ x.alarm }}</td>
+        <td>{{ x.sweep_Pmax }}</td>
+        <td>{{ x.battery_temp_C }}</td>
+        <td>{{ x.total_kwh_resetable }}</td>
+        <td>{{ x.battery_temp_F }}</td>
+        <td>{{ x.total_kwh }}</td>
+        <td>{{ x.array_current }}</td>
+        <td>{{ x.heat_sink_temp_F }}</td>
+        <td>{{ x.battery_sense_voltage }}</td>
+        <td>{{ x.charging_state }}</td>
+        <td>{{ x.sweep_Voc }}</td>
+        <td>{{ x.array_voltage }}</td>
+        <td>{{ x.heat_sink_temp_C }}</td>
+        <td>{{ x.input_power }}</td>
+        <td>{{ x.battery_current }}</td>
+        <td>{{ x.target_voltage }}</td>
+        <td>{{ x.sweep_Vmp }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
