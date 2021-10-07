@@ -1,48 +1,53 @@
 <div>
-    <h1>Greenhouse MEAN Stack</h1>
-    <p align="center"><img src="./arduino.jpg"><img src="./morningstar.png"></p>
-    
-A Full Software Stack to gather, interact with, and record data from an environmental sensing, storing, and harvesting Hardware Stack.
+	<h1>Greenhouse MEAN Stack</h1>
+	<div align="center"><img height="100px" width="100px" src="./morningstar.png"><img height="100px" width="100px" src="./arduino.jpg"></div>
+	<div>A Full Software Stack to gather, interact with, and record data from an environmental sensing, storing, and harvesting Hardware Stack.</div>
+	<div>
+		<h4>FrontEnd</h4>
+		<h5>Client Side</h5>
+		<ul>Uses css and/or animation styles to visually display vitals and sig events</ul>
+		<p><h5>SmartHome Dashboard:</h5>
+			<ul>Displays all controllers with links to their homepages</ul>
+			<ul>Displays Power data from MorningStar and keeps historical database</ul>
+			<ul>Displays status of water lines from Arduino Yun garden program</ul>
+			<ul>Allows for control of certain actuators via web UI</ul>
+			<ul>Displays all useful incoming Bridge data points real-time</ul>
+			<ul>Has navigation buttons to all live “rooms” under control 
+				(i.e., Brewery, Shroomery, Greenhouse, ChickenCoop, Surveillance)</ul>
+			<ul>Ledger – track income and expenses</ul>
+			<ul>Inventory Database</ul>
+			<ul>Displays historical charts</ul>
+			<ul>Weather Station (compares forecast to actual experience)</ul>
+			<ul>Links to Bankless Store Front with crowdfunding capability</ul>
+		</p>
+		<h4>BackEnd</h4>
+		<p><h5>Java:</h5>
+			<ul>Environment Sensing</ul>
+			<ul>Power Management (uses incoming MonringStar data to run a power management program)</ul>
+			<ul>GreenHouse/Garden Control (controls water, artificial light, airflow, humidty, etc.)</ul>
+			<ul>Task Timing/Control (what happens when how often)</ul>
+			<ul>Datalog</ul>
+			<ul>Python Calls</ul>
+			<ul>Low Voltage Actualization/Realization</ul>
+		</p>
+		<p><h5>Python:</h5>
+			<ul>Link to MorningStar via Modbus</ul>
+			<ul>Log data to file</ul>
+			<ul>Get Weather</ul>
+			<ul>Send Sig Event Emails</ul>
+			<ul>Filesystem functions</ul>
+		</p>
+		<p><h4>The Hardware:</h4>
+			<ul>Arduino micro controller coupled with a solar circuit using
+				a Morningstar solar charge controller complete with panels
+				and battery bank
+			</ul>
+		</p>
+	</div>
 
-FrontEnd
-Client Side
-	Uses css and/or animation styles to visually display vitals and sig events
-SmartHome Dashboard:
-	Displays all controllers with links to their homepages
-	Displays Power data from MorningStar and keeps historical database
-	Displays status of water lines from Arduino Yun garden program
-	Allows for control of certain actuators via web UI
-	Displays all useful incoming Bridge data points real-time
-	Has navigation buttons to all live “rooms” under control 
-(i.e., Brewery, Shroomery, Greenhouse, ChickenCoop, Surveillance)
-	Ledger – track income and expenses
-	Inventory Database
-	Displays historical charts
-	Weather Station (compares forecast to actual experience)
-	Links to Bankless Store Front with crowdfunding capability 
-BackEnd
-Java
-Environment Sensing
-Power Management (uses incoming MonringStar data to run a power management program)
-GreenHouse/Garden Control (controls water, artificial light, airflow, humidty, etc.)
-Task Timing/Control (what happens when how often)
-Datalog
-Python Calls
-Low Voltage Actualization/Realization 
-
-Python
-Link to MorningStar via Modbus
-Log data to file
-Get Weather
-Send Sig Event Emails
-Filesystem functions
-
-The Hardware
-Arduino micro controller
-coupled with a solar circuit using a Morningstar solar charge controller complete with panels and battery bank
-
+<div>
 **Though the microcontrollers hold significant amounts of data and are stand alone units running SmartHome© and GreenHouse© , they are ultimately meant to connect to a localhost running on a more sophisticated processor where StoreFront©, BehindTheCounter©, and AngelTokens© can be implemented for Sales Inventory and Payflow as well as Crowdfunding.**
-
+</div>
 
 </div>  
 <hr/>
