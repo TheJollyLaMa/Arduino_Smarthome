@@ -1,6 +1,12 @@
 <div>
 	<h1>Greenhouse MEAN Stack</h1>
-	<div align="center"><img height="100px" width="100px" src="./morningstar.png"><img height="100px" width="100px" src="./arduino.jpg"></div>
+	<div align="center">
+		<img height="100px" width="100px" src="./morningstar.png">
+		<img height="100px" width="100px" src="./arduino.jpg">
+		<img height="100px" width="100px" src="./arduino.jpg">
+		<img height="100px" width="100px" src="./arduino.jpg">
+		<img height="100px" width="100px" src="./arduino.jpg">
+	</div>
 	<div>A Full Software Stack to gather, interact with, and record data from an environmental sensing, storing, and harvesting Hardware Stack.</div>
 	<div>
 		<h4>FrontEnd</h4>
