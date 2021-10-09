@@ -7,7 +7,7 @@ app.controller('SmartHomeController', ['$scope', '$route', '$http', '$interval',
     $scope.doyRange = new Array;for(var i = 0; i <= 365; i++){$scope.doyRange.push(i);};
     $scope.woyRange = new Array;for(var i = 0; i <= 52; i++){$scope.woyRange.push(i);};
     $scope.moyRange = new Array;for(var i = 0; i <= 12; i++){$scope.moyRange.push(i);};
-    $scope.year_to_chart = {selected: 2020};
+    $scope.year_to_chart = {selected: 2021};
     $scope.time_window = {name: {name: 'doy'}};
     $scope.time_range = {doy: 1, woy: 1, moy: 1};
     $scope.timeWindowList = [{name:'doy', range: $scope.doyRange, selected: $scope.doyRange[-1]},{name:'woy', range: $scope.woyRange, selected: $scope.woyRange[-1]},{name:'moy', range: $scope.moyRange, selected: $scope.moyRange[-1]}];
@@ -17,13 +17,18 @@ app.controller('SmartHomeController', ['$scope', '$route', '$http', '$interval',
     $scope.d.selected_data_set_1 = 'array_voltage';
     $scope.d.selected_data_set_2 = 'battery_sense_voltage';
     $scope.harvestchart = 0;
-    $scope.showPinState = function() {$('.datadisplay').load('/data/get');};
+    $scope.showBridgeData = function() {$('.datadisplay').load('/data/get');};
     $scope.digitaltest = function () {$scope.digitaltestdata = $('.datadisplay').load('/arduino/digital_test');};
     $scope.greenhouse_variables = {};$scope.dailyGenData = {};$scope.powerGenData = [];$scope.power = [];$scope.datetime = [];$scope.line1 = [];$scope.line2 = [];$scope.line3 = [];$scope.line4 = [];
     $scope.PowerArrLabels = new Array; $scope.tristarVariableList = new Array; $scope.powerList = new Array;
     $scope.array_voltage_arrData = new Array; $scope.battery_temp_F_arrData = new Array;$scope.charging_current_arrData = new Array;$scope.solar_charge_arr_Data = new Array;$scope.battery_sense_voltage_arrData = new Array;
     $scope.rp1_arrData = new Array; $scope.rp2_arrData = new Array; $scope.rp3_arrData = new Array; $scope.rp4_arrData = new Array;
 
+    // Convert to Fahrenheit
+    $scope.convertToF = function (celsius) {
+      var f = celsius * 9/5 + 32;
+      return f
+    }
     //fetch arduino greenhouse data
     $scope.fetchChartData = function (){
           $scope.fetchGreenhouseData().then(function(data){
@@ -37,9 +42,67 @@ app.controller('SmartHomeController', ['$scope', '$route', '$http', '$interval',
     $scope.fetchGreenhouseData = function() {
           return $http.get('/data/get').then(function(data){
                   $scope.greenhouse_variables = data.data.value;
+                  $scope.change_Scenes_Night();
+                  $scope.panel_Pulse();
+                  // $scope.change_Scenes_Greenhouse_Temp();
                   return $scope.time_range.doy = $scope.greenhouse_variables.total_days;
               });
     };
+    $scope.change_Scenes_Night = function () {
+      if($scope.greenhouse_variables.charging_state == 'NIGHT'){
+        document.getElementById('main').style.backgroundImage="url(./img/T4T_Landing.gif)";
+        document.getElementById('main').style.backgroundSize="100%";
+        document.getElementById('main').style.backgroundRepeat="no-repeat";
+      }
+    };
+    $scope.panel_Pulse = function () {
+      if($scope.greenhouse_variables.charging_state == 'MPPT' && document.getElementById('solarpanel')){
+        if($scope.greenhouse_variables.array_voltage > 60 ){
+            document.getElementById('solarpanel').style.animation="panelPulse 0.5s ease-in-out infinite alternate";
+        }else{
+            document.getElementById('solarpanel').style.animation="panelPulse 2s ease-in-out infinite alternate";
+        }
+      }
+    };
+    $scope.changeProgramState = function (program) {
+      var url = "http://192.168.0.204/data";
+      $http.get(url + '/get/' + program).then(function(res){
+        if(res.data.value == 1){
+          $http.get(url + '/put/' + program + '/0');
+        }else{
+          $http.get(url + '/put/' + program + '/1');
+        }
+      }).then(async function(){
+        await $scope.fetchGreenhouseData();
+        await location.reload();
+      });
+    }
+    $scope.change_Scenes_Bat_Temp = function () {
+      if($scope.greenhouse_variables.battery_temp_F > 85){
+        document.getElementById('power').style.backgroundColor="red";
+      }else if($scope.greenhouse_variables.battery_temp_F >= 78 && $scope.greenhouse_variables.battery_temp_F <= 85 ){
+        document.getElementById('power').style.backgroundColor="orange";
+      }else if($scope.greenhouse_variables.battery_temp_F >= 55 && $scope.greenhouse_variables.battery_temp_F <= 77 ){
+        document.getElementById('power').style.backgroundColor="green";
+      }else if($scope.greenhouse_variables.battery_temp_F >= 40 && $scope.greenhouse_variables.battery_temp_F <= 54 ){
+        document.getElementById('power').style.backgroundColor="blue";
+      }else if($scope.greenhouse_variables.battery_temp_F <= 39 ){
+        document.getElementById('power').style.backgroundColor="indigo";
+      }
+    };
+    $scope.change_Scenes_Greenhouse_Temp = function () {
+      if($scope.greenhouse_variables.battery_temp_F > 85){
+        document.getElementById('greenhouse').style.backgroundColor="red";
+      }else if($scope.greenhouse_variables.battery_temp_F >= 72 && $scope.greenhouse_variables.battery_temp_F <= 85 ){
+        document.getElementById('greenhouse').style.backgroundColor="orange";
+      }else if($scope.greenhouse_variables.battery_temp_F >= 55 && $scope.greenhouse_variables.battery_temp_F <= 71 ){
+        document.getElementById('greenhouse').style.backgroundColor="green";
+      }else if($scope.greenhouse_variables.battery_temp_F >= 40 && $scope.greenhouse_variables.battery_temp_F <= 54 ){
+        document.getElementById('greenhouse').style.backgroundColor="blue";
+      }else if($scope.greenhouse_variables.battery_temp_F <= 39 ){
+        document.getElementById('greenhouse').style.backgroundColor="indigo";
+      }
+    }
     //fetch tristar data
     $scope.fetchPowerData = function () {
 
@@ -325,14 +388,14 @@ app.controller('SmartHomeController', ['$scope', '$route', '$http', '$interval',
             //console.log($scope.weatherArray);
             $scope.forecast_main = $scope.weatherArray[0].weather[0].main;
             $scope.forecast_description = $scope.weatherArray[0].weather[0].description;
-            $scope.forecast_temp = $scope.weatherArray[0].main['temp'];
+            $scope.forecast_temp = Math.round($scope.convertToF($scope.weatherArray[0].main['temp']));
             $scope.forecast_grnd_level = $scope.weatherArray[0].main['grnd_level'];
-            $scope.forecast_temp_max = $scope.weatherArray[0].main['temp_max'];
+            $scope.forecast_temp_max = Math.round($scope.convertToF($scope.weatherArray[0].main['temp_max']));
             $scope.forecast_sea_level = $scope.weatherArray[0].main['sea_level'];
             $scope.forecast_humidity = $scope.weatherArray[0].main['humidity'];
             $scope.forecast_pressure = $scope.weatherArray[0].main['pressure'];
-            $scope.forecast_temp_min = $scope.weatherArray[0].main['temp_min'];
-            $scope.forecast_feels_like = $scope.weatherArray[0].main['feels_like'];
+            $scope.forecast_temp_min = Math.round($scope.convertToF($scope.weatherArray[0].main['temp_min']));
+            $scope.forecast_feels_like = Math.round($scope.convertToF($scope.weatherArray[0].main['feels_like']));
         });
       });
     };
@@ -345,5 +408,5 @@ app.controller('SmartHomeController', ['$scope', '$route', '$http', '$interval',
           });
 
     };
-
+    $scope.fetchGreenhouseData();
 }]);

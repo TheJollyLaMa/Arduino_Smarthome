@@ -10,26 +10,46 @@
     <link rel="stylesheet" href="css/chart_style.css" />
     <link rel="stylesheet" href="css/circle-nav.css" />
     <link rel="stylesheet" href="css/therm.css" />
+    <link rel="stylesheet" href="css/animate.css" />
 
     <title>Smart Home Dashboard</title>
   </head>
-  <body ng-app="SmartHome">
-    <div class="container">
-      <a href="#!/about" ><img class="btn btn-primary navbtn" ng-src="img/about.png" alt="About"></a>
-      <a href="#!/home"><img class="btn btn-primary navbtn" ng-src="img/home.png" alt="Home"></a>
-      <a href="#!/power"><img class="btn btn-primary navbtn" ng-src="img/power.png" alt="Power"></a>
-      <a href="#!/dashboard"><img class="btn btn-primary navbtn" ng-src="img/dashboard.png" alt="Dashboard"></a>
-      <a href="#!/brewery"><img class="btn btn-primary navbtn" ng-src="img/brewery.png" alt="Brewery"></a>
-      <a href="#!/shroomery"><img class="btn btn-primary navbtn" ng-src="img/shroomery.png" alt="Shroomery"></a>
-      <a href="#!/coop"><img class="btn btn-primary navbtn" ng-src="img/coop.png" alt="Coop"></a>
-      <a href="#!/greenhouse"><img class="btn btn-primary navbtn" ng-src="img/greenhouse.png" alt="Greenhouse"></a>
-      <a href="#!/ledger"><img class="btn btn-primary navbtn" ng-src="img/ledger.png" alt="ledger"></a>
-      <a href="#!/video"><img class="btn btn-primary navbtn" ng-src="img/video.png" alt="video"></a>
-      <a href="#!/charts"><img class="btn btn-primary navbtn" ng-src="img/charts.png" alt="charts"></a>
-      <a href="#!/weather"><img class="btn btn-primary navbtn" ng-src="img/weather.png" alt="weather"></a>
-    </div>
+      <body ng-app="SmartHome" ng-controller="SmartHomeController">
+        <div id="main">
+          <div class="container navbar">
+            <a href="#!/about" ><img class="btn btn-primary navbtn" ng-src="img/about.png" alt="About"></a>
+            <a href="#!/home"><img class="btn btn-primary navbtn" ng-src="img/home.png" alt="Home"></a>
+            <a href="#!/power">
+              <div ng-show="greenhouse_variables.EmergencyPowerOverride == 0 ">
+                <img class="btn btn-primary navbtn powerOn" ng-src="img/power.png" alt="Power">
+              </div>
+              <div ng-show="greenhouse_variables.EmergencyPowerOverride == 1 ">
+                <img class="btn btn-primary navbtn emgPower" ng-src="img/power.png" alt="Power">
+              </div>
+            </a>
+            <a href="#!/water">
+              <div ng-show="greenhouse_variables.wellpumpMain == 0" >
+                <img class="btn btn-primary navbtn wellpumpMainOff" ng-src="img/water.jpg" alt="Water">
+              </div>
+              <div ng-show="greenhouse_variables.wellpumpMain == 1">
+                <img class="btn btn-primary navbtn wellpumpMainOn" ng-src="img/water.jpg" alt="Water">
+              </div>
+            </a>
+            <a href="#!/dashboard"><img class="btn btn-primary navbtn" ng-src="img/dashboard.png" alt="Dashboard"></a>
+            <a href="#!/brewery"><img class="btn btn-primary navbtn" ng-src="img/brewery.png" alt="Brewery"></a>
+            <a href="#!/shroomery"><img class="btn btn-primary navbtn" ng-src="img/shroomery.jpg" alt="Shroomery"></a>
+            <a href="#!/greenhouse"><img class="btn btn-primary navbtn" ng-src="img/greenhouse.png" alt="Greenhouse"></a>
+            <a href="#!/coop"><img class="btn btn-primary navbtn" ng-src="img/coop.png" alt="Coop"></a>
+            <a href="#!/ledger"><img class="btn btn-primary navbtn" ng-src="img/ledger.png" alt="ledger"></a>
+            <a href="#!/video"><img class="btn btn-primary navbtn" ng-src="img/video.png" alt="video"></a>
+            <a href="#!/charts"><img class="btn btn-primary navbtn" ng-src="img/charts.png" alt="charts"></a>
+            <a href="#!/weather"><img class="btn btn-primary navbtn" ng-src="img/weather.png" alt="weather"></a>
+            <a href="https://caffeinelamanna.com/#!/StoreFront"><img class="btn btn-primary navbtn" ng-src="img/CafLaM.png" alt="Store Front"></a>
 
-    <ng-view></ng-view>
+          </div>
+
+          <ng-view></ng-view>
+       </div>
 
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.js"></script>

@@ -3,8 +3,8 @@ td {
   padding: 5px;
   margin: 5px;
 }
-tbody tr:nth-child(even) {
-  background-color: #efecca;
+.alternate-background:nth-child(even) {
+  background-color: #e8f7ff;
 }
 .chart {
   background-color: #0D412B;

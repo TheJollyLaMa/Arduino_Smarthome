@@ -57,9 +57,13 @@
   </div>
   <div class="controlcontainer datadash">
       <p><label><h1>Bridge Data:</h1></label><p>
-      <button ng-click="showPinState()"><h2>Fetch</h2></button>
+      <button ng-click="showBridgeData()"><h2>Fetch</h2></button>
       <div class="datadisplay">
-        <p>{{bridge_data}}</p>
+        <table>
+          <tr ng-repeat="(key, value) in greenhouse_variables">
+            <td>{{key}}</td><td>{{value}}</td>
+          </tr>
+        </table>
       </div>
   </div>
 </div>

@@ -1,5 +1,7 @@
 body {
 	background-color:#8CEBC3;
+	background-size: 100%;
+
 	/*
 		other colors in scheme, light to dark
 			green		blue		yellow	orange
@@ -12,6 +14,15 @@ body {
 }
 p {
   font-size: 16;
+}
+.circulardatadisplay{
+	border-radius: 50%;
+	background-color: white;
+	border: 5px inset #FFB598;
+	margin: 5px;
+	padding: 20px;
+	overflow : scroll;
+	position: absolute;
 }
 .container {
 	position: relative;
@@ -33,25 +44,37 @@ p {
 	margin: 3px;
 }
 .datadisplay {
-	background-color: white;
-	border: 5px inset #FFB598;
-	height: 100%;
-	min-height: 500px;
-	overflow: scroll;
-}
-.circulardatadisplay{
-	border-radius: 50%;
-	background-color: white;
-	border: 5px inset #FFB598;
-	margin: 5px;
-	padding: 20px;
-	overflow : scroll;
-	position: absolute;
+	border: 5px double silver;
+	border-radius: 10px;
+	background-color: #BCF8DE;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	padding: 10px;
+	display: inline-block;
 }
 .datadash {
 	float: right;
 	margin-right: 5%;
 	width: 50%
+}
+.full button span {
+	background-color: limegreen;
+	border-radius: 32px;
+	color: black;
+}
+.gridsquare {
+	/* border: 2px solid white; */
+	border-radius: 10px;
+	margin: 5px;
+	padding: 10px;
+	width: 200px;
+	height: 200px;
+	font-size: 12px;
+	display: inline-block;
+	background-color: white;
+
 }
 .navbtn {
 	height: 75px;
@@ -60,42 +83,48 @@ p {
 	margin: 5px;
 	color: white;
 }
-.sunOn{
-	background-image: url("../img/sunOn.png");
-	background-size: 90%;
-	background-repeat: no-repeat;
-	background-position: center;
-}
-.sunOff {
-	background-image: url("../img/sunOff.png");
-	background-size: 90%;
-	background-repeat: no-repeat;
-	background-position: center;
-}
-.rainOn {
-	background-image: url("../img/rain.png");
-	background-size: 90%;
-	background-repeat: no-repeat;
-	background-position: center;
-}
-.rainOff {
-	background-image: url("../img/rain.png");
-	background-size: 90%;
-	background-repeat: no-repeat;
-	background-position: center;
-}
-.tempOn {
-  background-image: url("../img/therm.png");
-	background-size: 50%;
-	background-repeat: no-repeat;
-	background-position: center;}
 .menubar {
 	position: absolute;
 	bottom: 0;
 }
-.garden {
-
-}
-.mainPowerState {
+.partially button span {
+	background-color: orange;
+	border-radius: 32px;
 	color: black;
+}
+.view{
+	border: 5px double white;
+	border-radius: 10px;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	padding: 10px;
+	width: 400px;
+	display: inline-block;
+}
+.view2{
+	border: 5px double #0b4f2d;
+	border-radius: 10px;
+	background-color: white;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	padding: 5px;
+	display: inline-block;
+}
+.weatherCard{
+	border: 5px double #0b4f2d;
+	border-radius: 10px;
+	background-color: white;
+	margin-left: 2%;
+	margin-right: 2%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	padding: 2px;
+	width: 400px;
+	height: 400px;
+	overflow : scroll;
+	display: inline-block;
 }
