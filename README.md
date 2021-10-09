@@ -13,7 +13,7 @@
 	<div>
 		<h4>FrontEnd</h4>
 		<h5>Client Side</h5>
-		<ul>Uses css and/or animation styles to visually display vitals and sig events</ul>
+		<ul>Uses AngularJs, CSS and/or animation styles to visually display vitals and sig events</ul>
 		<p><h5>SmartHome Dashboard:</h5>
 			<ul>Displays all controllers with links to their homepages</ul>
 			<ul>Displays Power data from MorningStar and keeps historical database</ul>
