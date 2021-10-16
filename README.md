@@ -31,7 +31,7 @@
 		<h4>BackEnd</h4>
 		<p><h5>Java:</h5>
 			<ul>Environment Sensing</ul>
-			<ul>Power Management (uses incoming MonringStar data to run a power management program)</ul>
+			<ul>Power Management (uses incoming MorningStar data to run a power management program)</ul>
 			<ul>GreenHouse/Garden Control (controls water, artificial light, airflow, humidty, etc.)</ul>
 			<ul>Task Timing/Control (what happens when how often)</ul>
 			<ul>Datalog</ul>
