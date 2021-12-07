@@ -7,7 +7,7 @@ from email import encoders
 
 def send_morning_email(total_kWh,total_days):
     USERNAME = 'SolarMail888@gmail.com'
-    PASSWORD = 'pabqar-zixdah-wErjy1'
+    PASSWORD = ''
     MAILTO  = 'boyyee44@gmail.com'
 
     msg = MIMEMultipart()
@@ -46,7 +46,7 @@ def send_morning_email(total_kWh,total_days):
 
 def send_emergency_notification_email(Greenhouse_Data, Tristar_Data):
     USERNAME = 'SolarMail888@gmail.com'
-    PASSWORD = 'pabqar-zixdah-wErjy1'
+    PASSWORD = ''
     MAILTO  = 'boyyee44@gmail.com'
 
     msg = MIMEMultipart()
