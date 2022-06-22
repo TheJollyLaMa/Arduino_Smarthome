@@ -66,4 +66,6 @@
 	<img height="250px" width="250px" src="https://user-images.githubusercontent.com/75486638/119382357-eb5cba00-bc8f-11eb-8f67-6b60b4703688.png">
 	<img height="250px" width="250px" src="https://user-images.githubusercontent.com/75486638/134360854-8baa8306-39c4-4c5b-ab7b-5a7e5d0871df.png">
 	<img height="250px" width="250px" src="https://user-images.githubusercontent.com/75486638/134360864-7627cc5d-9033-410a-a4c7-f878eb1a0bc8.png">
+	![EnergyConsole](https://user-images.githubusercontent.com/75486638/175050338-9bba38e4-9c23-410e-b238-0191f300e7ea.png)
+
 </div>
