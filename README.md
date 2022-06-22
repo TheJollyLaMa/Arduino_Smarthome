@@ -67,5 +67,8 @@
 	<img height="250px" width="250px" src="https://user-images.githubusercontent.com/75486638/134360854-8baa8306-39c4-4c5b-ab7b-5a7e5d0871df.png">
 	<img height="250px" width="250px" src="https://user-images.githubusercontent.com/75486638/134360864-7627cc5d-9033-410a-a4c7-f878eb1a0bc8.png">
 	![EnergyConsole](https://user-images.githubusercontent.com/75486638/175050338-9bba38e4-9c23-410e-b238-0191f300e7ea.png)
+	![PowerChart_Overview](https://user-images.githubusercontent.com/75486638/175050507-791ff907-8ce6-4aad-8843-2f4bf41c96eb.png)
+	![Sprites_View](https://user-images.githubusercontent.com/75486638/175050548-5557915e-9bbe-466d-9c19-ee33a066d210.png)
+	![Coop_Console](https://user-images.githubusercontent.com/75486638/175050560-adb8f392-b930-4f36-96e2-12347286823e.png)
 
 </div>
