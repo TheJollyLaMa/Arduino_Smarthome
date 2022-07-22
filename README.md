@@ -1,6 +1,6 @@
 <div>
 	<div align="center"><img height="200px" width="375px" src="./UnifiedField.png"></div>
-	<div align="center">*see main loop in greenhouse.ino</div>
+	<div align="center">*see MP.ino for UF Stack implementation</div>
 	<h1>🌱Greenhouse MEAN Stack</h1>
 	<div align="center">
 		<img height="100px" width="100px" src="./morningstar.png">
