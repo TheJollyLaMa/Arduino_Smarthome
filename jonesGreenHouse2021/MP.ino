@@ -13,8 +13,11 @@ void TheMainProgram () {
 /*
             *****Environment Control*****  (garden programs )
  */
-            sun();delay(200);rain();delay(200);wind();delay(200);   //earth();data(ether);energyMonitor();          
-            
+            sun();delay(200);rain();delay(200);wind();delay(200);
+            //earth();data(ether);energyMonitor();          
+            // data is sent to various relevant blockchains accordingly to satisify the ether tone
+            // supply chain, asset usage accounting, weatherlink, crop management, energy allocation specs, etc.
+            // put on public ledger 
             event_msg+="Completed Sun, Rain, and Wind Programs.";
  
 //         if (charging_state == "FLOAT") {
