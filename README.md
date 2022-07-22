@@ -1,7 +1,7 @@
 <div>
-	<h1>Greenhouse MEAN Stack</h1>
-	<img height="100px" width="100px" src="./UnifiedField.png">
-
+	<div align="center"><img height="200px" width="375px" src="./UnifiedField.png"></div>
+	<div align="center">*see main loop in greenhouse.ino</div>
+	<h1>🌱Greenhouse MEAN Stack</h1>
 	<div align="center">
 		<img height="100px" width="100px" src="./morningstar.png">
 		<img height="100px" width="100px" src="./arduino.jpg">
@@ -11,7 +11,9 @@
 		<img height="100px" width="100px" src="./node_logo.png">
 		<img height="100px" width="100px" src="./angularjs_logo.png">
 	</div>
-	<div>A Full Software Stack to gather, interact with, and record data from an environmental sensing, storing, and harvesting Hardware Stack.</div>
+	<div>
+	A Full Software Stack to gather, interact with, and record data from an environmental energy sensing, storing, and harvesting Hardware Stack.
+	</div>
 	<div>
 		<h4>FrontEnd</h4>
 		<h5>Client Side</h5>
@@ -50,7 +52,7 @@
 		<p><h4>The Hardware:</h4>
 			<ul>Arduino micro controller coupled with a solar circuit using
 				a Morningstar solar charge controller complete with panels
-				and battery bank
+				and battery bank.
 			</ul>
 		</p>
 	</div>
@@ -69,6 +71,11 @@
 	<img height="250px" width="250px" src="https://user-images.githubusercontent.com/75486638/119382357-eb5cba00-bc8f-11eb-8f67-6b60b4703688.png">
 	<img height="250px" width="250px" src="https://user-images.githubusercontent.com/75486638/134360854-8baa8306-39c4-4c5b-ab7b-5a7e5d0871df.png">
 	<img height="250px" width="250px" src="https://user-images.githubusercontent.com/75486638/134360864-7627cc5d-9033-410a-a4c7-f878eb1a0bc8.png">
+	<img height="250px" width="250px" src="https://user-images.githubusercontent.com/75486638/175050338-9bba38e4-9c23-410e-b238-0191f300e7ea.png">
+	<img height="250px" width="250px" src="https://user-images.githubusercontent.com/75486638/175050507-791ff907-8ce6-4aad-8843-2f4bf41c96eb.png">
+	<img height="250px" width="250px" src="https://user-images.githubusercontent.com/75486638/175050548-5557915e-9bbe-466d-9c19-ee33a066d210.png">
+	<img height="250px" width="250px" src="https://user-images.githubusercontent.com/75486638/175050560-adb8f392-b930-4f36-96e2-12347286823e.png">
+
 	![EnergyConsole](https://user-images.githubusercontent.com/75486638/175050338-9bba38e4-9c23-410e-b238-0191f300e7ea.png)
 	![PowerChart_Overview](https://user-images.githubusercontent.com/75486638/175050507-791ff907-8ce6-4aad-8843-2f4bf41c96eb.png)
 	![Sprites_View](https://user-images.githubusercontent.com/75486638/175050548-5557915e-9bbe-466d-9c19-ee33a066d210.png)
