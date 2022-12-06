@@ -1,6 +1,5 @@
 <div>
 	<div align="center"><img height="200px" width="375px" src="./0.png"></div>
-	<div align="center"><img height="200px" width="375px" src="./0.png"></div>
 	<br>
 	<div align="center">*see MP.ino for UF Stack implementation</div>
 	<h1>🌱Greenhouse MEAN Stack</h1>
