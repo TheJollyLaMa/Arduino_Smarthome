@@ -78,3 +78,8 @@
 	<img height="250px" width="250px" src="https://user-images.githubusercontent.com/75486638/175050548-5557915e-9bbe-466d-9c19-ee33a066d210.png">
 	<img height="250px" width="250px" src="https://user-images.githubusercontent.com/75486638/175050560-adb8f392-b930-4f36-96e2-12347286823e.png">
 </div>
+
+## License
+
+Code: [Apache-2.0](LICENSE) · Art and docs: [CC BY 4.0](LICENSES/CC-BY-4.0.txt) · Please keep the [NOTICE](NOTICE) and give The Jolly LaMa / A Decent Agency a head nod when you reuse this work.
+Support the work with a [Supporter DNFT](https://thejollylama.github.io/DecentMarket/).
